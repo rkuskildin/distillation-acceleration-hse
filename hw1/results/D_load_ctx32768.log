@@ -1,0 +1,28 @@
+0.00.024.434 I srv  llama_server: initializing ...
+0.00.024.442 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.024.679 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.026.850 I srv    load_model: loading model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.00.361.963 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.00.516.721 W model has unused tensor blk.64.attn_norm.weight (size = 20480 bytes) -- ignoring
+0.00.516.727 W model has unused tensor blk.64.post_attention_norm.weight (size = 20480 bytes) -- ignoring
+0.00.516.731 W model has unused tensor blk.64.attn_q.weight (size = 51609600 bytes) -- ignoring
+0.00.516.733 W model has unused tensor blk.64.attn_k.weight (size = 5570560 bytes) -- ignoring
+0.00.516.735 W model has unused tensor blk.64.attn_v.weight (size = 5570560 bytes) -- ignoring
+0.00.516.741 W model has unused tensor blk.64.attn_output.weight (size = 25804800 bytes) -- ignoring
+0.00.516.743 W model has unused tensor blk.64.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.00.516.744 W model has unused tensor blk.64.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.00.516.747 W model has unused tensor blk.64.ffn_gate.weight (size = 73113600 bytes) -- ignoring
+0.00.516.749 W model has unused tensor blk.64.ffn_down.weight (size = 73113600 bytes) -- ignoring
+0.00.516.751 W model has unused tensor blk.64.ffn_up.weight (size = 73113600 bytes) -- ignoring
+0.00.516.754 W model has unused tensor blk.64.nextn.eh_proj.weight (size = 43008000 bytes) -- ignoring
+0.00.516.756 W model has unused tensor blk.64.nextn.enorm.weight (size = 20480 bytes) -- ignoring
+0.00.516.758 W model has unused tensor blk.64.nextn.hnorm.weight (size = 20480 bytes) -- ignoring
+0.00.516.763 W model has unused tensor blk.64.nextn.shared_head_norm.weight (size = 20480 bytes) -- ignoring
+0.01.587.211 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 2048.00 MiB on device 0: cudaMalloc failed: out of memory
+0.01.587.216 E ggml_backend_buft_alloc_buffer_n_default: failed to allocate CUDA0 buffer of size 2147483648
+0.01.587.773 E llama_init_from_model: failed to initialize the context: failed to allocate buffer for kv cache
+0.01.587.777 E cmn  common_init_: failed to create context with model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.01.587.779 E cmn  common_init_: failed to create context with model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.01.587.783 E srv    load_model: failed to create_context with model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.01.587.784 I srv    operator(): operator(): cleaning up before exit...
+0.01.588.433 E srv  server_run_i: exiting due to model loading error

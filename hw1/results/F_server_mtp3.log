@@ -1,0 +1,38 @@
+0.00.021.303 I srv  llama_server: initializing ...
+0.00.021.311 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.021.553 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.023.757 I srv    load_model: loading model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.00.560.600 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.01.788.289 I cmn          init: llama threadpool init, n_threads = 8
+0.01.877.931 I common_speculative_init_result: creating MTP draft context against the target model '/home/rkuskildin/models/qwen38/Qwen3.8-27B-UD-IQ3_XXS.gguf'
+0.01.900.175 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.01.933.108 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.01.933.144 I srv  server_run_i: model loaded
+0.01.933.149 I srv  server_on_li: listening on http://127.0.0.1:18081
+0.01.982.901 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.01.982.953 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+/home/rkuskildin/llama.cpp/ggml/src/ggml-cuda/ggml-cuda.cu:111: CUDA error
+0.02.084.121 E CUDA error: out of memory
+0.02.084.125 E   current device: 0, in function alloc at /home/rkuskildin/llama.cpp/ggml/src/ggml-cuda/ggml-cuda.cu:631
+0.02.084.125 E   cuMemCreate(&handle, reserve_size, &prop, 0)
+/home/rkuskildin/llama.cpp/build/bin/libggml-base.so.0(+0x172eb)[0x76891ab4d2eb]
+/home/rkuskildin/llama.cpp/build/bin/libggml-base.so.0(+0x1776f)[0x76891ab4d76f]
+/home/rkuskildin/llama.cpp/build/bin/libggml-base.so.0(ggml_abort+0x152)[0x76891ab4d942]
+/home/rkuskildin/llama.cpp/build/bin/libggml-cuda.so.0(+0x312ad6)[0x76890b712ad6]
+/home/rkuskildin/llama.cpp/build/bin/libggml-cuda.so.0(_ZN18ggml_cuda_pool_vmm5allocEmPm+0x516)[0x76890b72f5d6]
+/home/rkuskildin/llama.cpp/build/bin/libggml-cuda.so.0(+0x322297)[0x76890b722297]
+/home/rkuskildin/llama.cpp/build/bin/libggml-cuda.so.0(+0x32a683)[0x76890b72a683]
+/home/rkuskildin/llama.cpp/build/bin/libggml-base.so.0(ggml_backend_sched_graph_compute_async+0x7b8)[0x76891ab6da38]
+/home/rkuskildin/llama.cpp/build/bin/libllama.so.0(_ZN13llama_context13graph_computeEP11ggml_cgraphb+0xdb)[0x768918e5ceeb]
+/home/rkuskildin/llama.cpp/build/bin/libllama.so.0(_ZN13llama_context14process_ubatchERK12llama_ubatch14llm_graph_typeP22llama_memory_context_iR11ggml_status+0x135)[0x768918e5f745]
+/home/rkuskildin/llama.cpp/build/bin/libllama.so.0(_ZN13llama_context6decodeERK15llama_batch_ext+0x834)[0x768918e6a7d4]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_ZNSt17_Function_handlerIFvvEZN19server_context_impl6decodeERiiEUlvE_E9_M_invokeERKSt9_Any_data+0x52)[0x76891a5b8ee2]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_ZN12server_queue14yield_to_queueEOSt8functionIFvvEE+0xab)[0x76891a56091b]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_ZN19server_context_impl6decodeERii+0x1ab)[0x76891a5cec2b]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_ZN19server_context_impl12update_slotsEv+0x4a6)[0x76891a5d3626]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_ZN12server_queue10start_loopEl+0x128)[0x76891a5613a8]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(+0xef5c3)[0x76891a4ef5c3]
+/home/rkuskildin/llama.cpp/build/bin/libllama-server-impl.so(_Z12llama_serveriPPc+0x149)[0x76891a4efb19]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x768919c29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x768919c29e40]
+/home/rkuskildin/llama.cpp/build/bin/llama-server(+0x1295)[0x640010ca7295]
